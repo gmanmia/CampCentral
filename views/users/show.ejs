@@ -1,14 +1,14 @@
 <% include ../partials/header %>
 
-<h3><%=user.username%>'s Profile</h3>
+<h3>Perfil de <%=user.username%></h3>
 <div class="row">
     <div class="col-md-4">
-        <h5>Name: <%=user.firstName%> <%=user.lastName%> </h5>
+        <h5>Nombre: <%=user.firstName%> <%=user.lastName%> </h5>
         <img src="<%=user.avatar%>" alt="user profile image" id="avatar">
     </div>
     
     <div class="col-md-4">
-        <h5>About Me</h5>
+        <h5>Acerca De</h5>
         <p><%=user.about%><p>
         <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
             <a href="/users/<%= user._id%>/edit" class="btn btn-xs btn-warning">Edit</a>
