@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
@@ -27,6 +29,7 @@ app.use(flash());
 
 // seedDB();
 
+app.locals.moment = require('moment');
 // PASSPORT configuration
 app.use(require("express-session")({
     secret: "life is good",
